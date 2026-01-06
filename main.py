@@ -4,13 +4,33 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+from puissance_relative_analytique import puissance_relative_analytique
+from puissance_relative_iterative import puissance_relative_iterative
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+def main():
+    print("=== Calcul de puissance relative ===")
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    # Exemple de valeurs
+    a = 2
+    b = 16
+
+    print(f"\nValeurs utilisées : a = {a}, b = {b}")
+
+    # Méthode analytique
+    try:
+        resultat_analytique = puissance_relative_analytique(a, b)
+        print(f"\nMéthode analytique : {resultat_analytique}")
+    except Exception as e:
+        print(f"\nMéthode analytique indisponible : {e}")
+
+    # Méthode itérative
+    try:
+        resultat_iteratif = puissance_relative_iterative(a, b)
+        print(f"Méthode itérative : {resultat_iteratif}")
+    except Exception as e:
+        print(f"Méthode itérative indisponible : {e}")
+
+
+if __name__ == "__main__":
+    main()
